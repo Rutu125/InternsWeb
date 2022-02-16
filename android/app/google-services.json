@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "154707932734",
+    "project_id": "internsweb-d4b4e",
+    "storage_bucket": "internsweb-d4b4e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154707932734:android:073cee930e2dc55136036f",
+        "android_client_info": {
+          "package_name": "com.example.intern_web"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "154707932734-e7cvgo8a3nnmn68iqlha85mj5mqa6lbb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXxPFtmKFxjF9_FLdHlZUckD49RbnhSAI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "154707932734-e7cvgo8a3nnmn68iqlha85mj5mqa6lbb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
