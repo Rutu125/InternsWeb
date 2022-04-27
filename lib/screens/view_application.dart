@@ -10,6 +10,11 @@ class ViewApplication extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Colors.black54,
+      appBar: AppBar(
+        title: Text('View Applications'),
+        backgroundColor: Colors.deepPurple,
+      ),
       body: Container(
         child: StreamBuilder<QuerySnapshot>(
           stream: _firestore.snapshots(),
@@ -18,7 +23,7 @@ class ViewApplication extends StatelessWidget {
               print('Error..........');
               return Center(
                 child: CircularProgressIndicator(
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.black54,
                 ),
               );
             }
@@ -90,22 +95,88 @@ class Application_card extends StatelessWidget {
           );
         }));
       },
-      child: Column(
-        children: [
-          Text(openings),
-          Text(skills),
-          Text(duration),
-          Text(domain),
-          Text(stipend),
-          Text(apply_by),
-          Text(company_des),
-          Text(internDes),
-          Text(last_date),
-          Text(start_date),
-          SizedBox(
-            height: MediaQuery.of(context).size.height * 0.1,
-          ),
-        ],
+      child: Container(
+        margin: EdgeInsets.all(10.0),
+        padding: EdgeInsets.all(25.0),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10.0),
+          color: Colors.deepPurpleAccent,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Text(
+              'Openings: ' + openings,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Skills: ' + skills,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Duration: ' + duration,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Domain: ' + domain,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Stipend: ' + stipend,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Apply by: ' + apply_by,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Company Description: ' + company_des,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Intern Description: ' + internDes,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Last Date: ' + last_date,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+            Text(
+              'Start Date: ' + start_date,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.03,
+                color: Colors.white,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

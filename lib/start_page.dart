@@ -33,10 +33,15 @@ class _StartPageState extends State<StartPage> with TickerProviderStateMixin {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image(image: AssetImage('images/Wave-PNG-Picture.png')),
+            Image(
+              image: AssetImage('images/Wave-PNG-Picture.png'),
+            ),
             SizedBox(
                 width: MediaQuery.of(context).size.width,
                 child: Image(image: AssetImage('images/logospy.png'))),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.03,
+            ),
             Text(
               'Are you looking for Interns?',
               style: TextStyle(fontSize: 30.0, color: Colors.white),
