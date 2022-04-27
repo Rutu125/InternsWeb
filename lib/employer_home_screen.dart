@@ -1,11 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intern_web/employer_register_page.dart';
 import 'package:intern_web/login_page.dart';
 import 'package:intern_web/registration_screen.dart';
 import 'components/buttonWidget.dart';
 
-class HomeScreen extends StatelessWidget {
-  static String id = 'home_screen';
+class EmployeeHomeScreen extends StatelessWidget {
+  static String id = 'employer_home_screen';
+  const EmployeeHomeScreen({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +29,7 @@ class HomeScreen extends StatelessWidget {
               height: 20.0,
             ),
             Text(
-              'Get Your Dream Internship and a lot more',
+              'Get Interns in an Instant',
               style: TextStyle(fontSize: 30.0),
               textAlign: TextAlign.center,
             ),
@@ -39,7 +42,7 @@ class HomeScreen extends StatelessWidget {
                     ButtonWidget(
                       widthLen: 150.0,
                       onpressed: () {
-                        Navigator.pushNamed(context, RegistrationScreen.id);
+                        Navigator.pushNamed(context, EmployerRegisterPage.id);
                       },
                       name: Text(
                         'Register',
@@ -56,7 +59,7 @@ class HomeScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage(false)));
+                                builder: (context) => LoginPage(true)));
                       },
                       name: Text(
                         'Sign in',

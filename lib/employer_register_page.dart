@@ -1,24 +1,28 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:intern_web/components/buttonWidget.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:intern_web/login_page.dart';
-import 'package:intern_web/main_screen.dart';
+import 'package:intern_web/employer_main_screen.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'components/buttonWidget.dart';
+import 'login_page.dart';
+import 'main_screen.dart';
 
 final _firestore = FirebaseFirestore.instance.collection('users');
 
-const storage = FlutterSecureStorage();
-
-class RegistrationScreen extends StatelessWidget {
-  static String id = 'registration_screen';
+class EmployerRegisterPage extends StatelessWidget {
+  static String id = 'employer_register_page';
+  const EmployerRegisterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    const storage = FlutterSecureStorage();
+
     final _auth = FirebaseAuth.instance;
     String password = '';
     String email = '';
+    String companyName = '';
+    String companySize = '';
     String errorText = 'Error';
     String name = '';
 
@@ -26,7 +30,7 @@ class RegistrationScreen extends StatelessWidget {
         body: ListView(
       children: [
         Padding(
-          padding: EdgeInsets.only(left: 34, right: 34, top: 55),
+          padding: EdgeInsets.only(left: 34, right: 34, top: 34, bottom: 34),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -47,11 +51,28 @@ class RegistrationScreen extends StatelessWidget {
               TextField(
                 decoration: InputDecoration(
                   icon: Icon(Icons.account_box_rounded),
-                  hintText: 'Name',
+                  hintText: 'Company Name',
                   border: InputBorder.none,
                 ),
                 onChanged: (value) {
-                  name = value;
+                  companyName = value;
+                },
+              ),
+              SizedBox(
+                height: 10.0,
+                width: double.infinity,
+                child: Divider(
+                  color: Colors.black,
+                ),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  border: InputBorder.none,
+                  hintText: 'Company Size',
+                  icon: Icon(Icons.location_city),
+                ),
+                onChanged: (value) {
+                  companySize = value;
                 },
               ),
               SizedBox(
@@ -73,7 +94,7 @@ class RegistrationScreen extends StatelessWidget {
                 },
               ),
               SizedBox(
-                height: 15.0,
+                height: 10.0,
                 width: double.infinity,
                 child: Divider(
                   color: Colors.black,
@@ -104,8 +125,8 @@ class RegistrationScreen extends StatelessWidget {
                 widthLen: double.infinity,
                 onpressed: () async {
                   try {
-                    await storage.write(key: 'employee', value: 'true');
-
+                    await storage.write(key: 'employee', value: 'false');
+                    print(companyName);
                     final user = await _auth.createUserWithEmailAndPassword(
                         email: email, password: password);
 
@@ -116,11 +137,14 @@ class RegistrationScreen extends StatelessWidget {
 
                       doc.set({
                         'email': email,
-                        'name': name,
+                        'company_size': companySize,
+                        'company_name': companyName,
                         'uid': user.user?.uid,
                       });
 
-                      Navigator.pushNamed(context, MainScreen.id);
+                      print(user.user?.uid);
+
+                      Navigator.pushNamed(context, EmployerMainScreen.id);
                     }
                   } catch (e) {
                     print('Error');
