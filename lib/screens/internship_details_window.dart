@@ -44,28 +44,111 @@ class _InternshipDetailsWindowState extends State<InternshipDetailsWindow> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Column(
-          children: [
-            Text(widget.openings),
-            Text(widget.skills),
-            Text(widget.duration),
-            Text(widget.stipend),
-            Text(widget.apply),
-            Text(widget.cDes),
-            Text(widget.iDes),
-            Text(widget.lDate),
-            Text(widget.sDate),
-            ElevatedButton(
-                onPressed: () {
+      appBar: AppBar(
+        title: Text('Internship details'),
+        backgroundColor: Colors.deepPurple,
+      ),
+      body: Center(
+        child: Container(
+          height: MediaQuery.of(context).size.height * 0.45,
+          margin: EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(25.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.deepPurpleAccent,
+          ),
+          child: Column(
+            children: [
+              Text(
+                'Openings: ' + widget.openings,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Skills: ' + widget.skills,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Duration: ' + widget.duration,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Stipend: ' + widget.stipend,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Apply before: ' + widget.apply,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Company Description: ' + widget.cDes,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Intern Description: ' + widget.iDes,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Last Date: ' + widget.lDate,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Start Date: ' + widget.sDate,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.02,
+              ),
+              GestureDetector(
+                child: Container(
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.deepPurple),
+                  child: Text(
+                    'Apply',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+                onTap: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return ApplyScreen(
                       doc_id: widget.doc_id,
                     );
                   }));
                 },
-                child: Text("Apply")),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );

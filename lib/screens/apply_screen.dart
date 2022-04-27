@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:intern_web/constants.dart';
 import 'package:intern_web/main_screen.dart';
 
 final _fire = FirebaseFirestore.instance.collection('applications');
@@ -19,54 +20,108 @@ class ApplyScreen extends StatelessWidget {
         portfolio = '';
 
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Apply Details'),
+        backgroundColor: Colors.deepPurple,
+      ),
       body: Container(
         child: ListView(
           children: [
-            Text('Personal Details: '),
-            Text('Name'),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             TextField(
               onChanged: (value) {
                 name = value;
               },
+              decoration: kTextFieldDecorationfor.copyWith(
+                hintText: 'Name',
+              ),
             ),
-            Text('Email: '),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             TextField(
               onChanged: (value) {
                 email = value;
               },
+              decoration: kTextFieldDecorationfor.copyWith(
+                hintText: 'Email',
+              ),
             ),
-            Text('Phone number: '),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             TextField(
               onChanged: (value) {
                 phone = value;
               },
+              decoration: kTextFieldDecorationfor.copyWith(
+                hintText: 'Phone number',
+              ),
             ),
-            Text('Place: '),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             TextField(
               onChanged: (value) {
                 location = value;
               },
+              decoration: kTextFieldDecorationfor.copyWith(
+                hintText: 'Place',
+              ),
             ),
-            Text('Education Details: '),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             TextField(
               onChanged: (value) {
                 education = value;
               },
+              decoration: kTextFieldDecorationfor.copyWith(
+                hintText: 'Education Details',
+              ),
             ),
-            Text('Skills'),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             TextField(
               onChanged: (value) {
                 skills = value;
               },
+              decoration: kTextFieldDecorationfor.copyWith(
+                hintText: 'Skills',
+              ),
             ),
-            Text('Portfolios'),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.04,
+            ),
             TextField(
               onChanged: (value) {
                 portfolio = value;
               },
+              decoration: kTextFieldDecorationfor.copyWith(
+                hintText: 'Portfolio',
+              ),
             ),
-            ElevatedButton(
-              onPressed: () {
+            GestureDetector(
+              child: Container(
+                margin: EdgeInsets.symmetric(horizontal: 80, vertical: 40),
+                padding: EdgeInsets.all(12),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: Colors.deepPurple),
+                child: Center(
+                  child: Text(
+                    'Apply',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ),
+              ),
+              onTap: () {
                 DocumentReference doc =
                     _fire.doc(doc_id).collection('applicants').doc();
 
@@ -83,7 +138,6 @@ class ApplyScreen extends StatelessWidget {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: Text('Submit Application'),
             ),
           ],
         ),

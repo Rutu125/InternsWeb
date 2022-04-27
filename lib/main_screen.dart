@@ -44,6 +44,7 @@ class _MainScreenState extends State<MainScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Interns Web'),
+        backgroundColor: Colors.deepPurple,
       ),
       drawer: Drawer(
         child: ListView(
@@ -188,15 +189,59 @@ class InternshipCard extends StatelessWidget {
                 doc_id: doc_id);
           }));
         },
-        child: Column(
-          children: [
-            Text(domain),
-            Text(companyName),
-            Text(workWhere),
-            Text(stipend),
-            Text(duration),
-            Text(apply),
-          ],
+        child: Container(
+          margin: EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(25.0),
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10.0),
+            color: Colors.deepPurpleAccent,
+          ),
+          child: Column(
+            children: [
+              Text(
+                'Domain: ' + domain,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Company Name: ' + companyName,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Work from where: ' + workWhere,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Stipend: ' + stipend,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Duration: ' + duration,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+              Text(
+                'Last date to Apply: ' + apply,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.height * 0.03,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
