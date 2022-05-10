@@ -129,7 +129,7 @@ class _StartPageState extends State<StartPage> with TickerProviderStateMixin {
                     ]),
                 child: Center(
                   child: Text(
-                    "Employee",
+                    "Intern",
                     style: TextStyle(
                       fontSize: 30.0,
                     ),

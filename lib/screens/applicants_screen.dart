@@ -64,16 +64,67 @@ class ApplicantsWidget extends StatelessWidget {
       required this.name});
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(name),
-        Text(email),
-        Text(phone),
-        Text(education),
-        Text(location),
-        Text(skills),
-        Text(portfolio),
-      ],
+    return Container(
+      height: MediaQuery.of(context).size.height * 0.45,
+      margin: EdgeInsets.all(10.0),
+      padding: EdgeInsets.all(25.0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(10.0),
+        color: Colors.deepPurpleAccent,
+      ),
+      child: Column(
+        children: [
+          Text(
+            name,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            email,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            phone,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            education,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            location,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            skills,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: Colors.white,
+            ),
+          ),
+          Text(
+            portfolio,
+            style: TextStyle(
+              fontSize: MediaQuery.of(context).size.height * 0.03,
+              color: Colors.white,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
