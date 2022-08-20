@@ -11,8 +11,9 @@ An online platform created to act as a mediator between the interns and the prov
 
 The employers can register and post the internships which will include all the necessary details like the domain, the project, the location, stipend,etc. 
 
+<p align ="center">
 <img  src ="https://user-images.githubusercontent.com/87608856/185750598-a4f584c4-a156-4e15-baa4-6f61028070f5.jpeg" width = "300">       <img src="https://user-images.githubusercontent.com/87608856/185750614-be399823-5358-4124-84c8-79f7bd83bf3b.jpeg" width = "300">     <img src="https://user-images.githubusercontent.com/87608856/185750838-710f9504-2274-461f-b667-0b7f773eaabe.jpeg" width = "300">
-
+</p>
 
 <p align ="center">
 
