@@ -23,19 +23,17 @@ The interns can register and search for internships according to their interests
 
 <p align ="center">
 <img src= "https://user-images.githubusercontent.com/87608856/185751212-c23d13d7-7707-4e23-bbd0-7ed387afba4c.jpeg" width = "300">
-
 </p>
 
 When an intern finds an internship which he/she likes they can apply for it. The employer will be able to see who has applied for it along with the details of the intern who applied for it.
 
-  <p align ="center">
 
+<p align ="center">
 <img src="https://user-images.githubusercontent.com/87608856/185751037-77898f62-a9ce-4fd7-b794-8a0274bdfdb3.jpeg" width = "300">      <img src="https://user-images.githubusercontent.com/87608856/185751075-42858f72-67a4-453c-aae9-93e09af91e27.jpeg" width = "300">
 </p>
 
 Based on the profile the employer can then decide whether he wants to contact them or not and further communication can be done using the details provided.
 
-    <p align ="center">
-
+<p align ="center">
 <img src="https://user-images.githubusercontent.com/87608856/185751215-082c7657-22d5-4f32-bee2-65ab1d73db2d.jpeg" width = "300">
 </p>
