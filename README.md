@@ -5,7 +5,7 @@ A Flutter application created with Firebase backend.
 
 An online platform created to act as a mediator between the interns and the providers. It has different logins for employers and employees. 
 
-<img src= "https://user-images.githubusercontent.com/87608856/185749259-3284b3f9-ccab-4bb3-a23e-c9a5641157ce.jpeg" width="100" )
+<img src= "https://user-images.githubusercontent.com/87608856/185749259-3284b3f9-ccab-4bb3-a23e-c9a5641157ce.jpeg")
 
 The employers can register and post the internships which will include all the necessary details like the domain, the project, the location, stipend,etc. 
 
