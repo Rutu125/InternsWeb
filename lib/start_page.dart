@@ -43,7 +43,7 @@ class _StartPageState extends State<StartPage> with TickerProviderStateMixin {
               height: MediaQuery.of(context).size.height * 0.03,
             ),
             Text(
-              'Are you looking for Interns? or not',
+              'Are you looking for Interns?',
               style: TextStyle(fontSize: 30.0, color: Colors.white),
             ),
             SizedBox(
